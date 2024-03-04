@@ -157,8 +157,7 @@ string Solutions::longestPalindrome(std::string s)
 	int length = s.length();
 	int maxStart = 0;
 	int maxLength = 0;
-	//aebacacabe
-	//aebaccabe
+	//cbbd
 	for (int i = 0; i < length; i++)          //遍历每个字符作为中心字符
 	{
 		for (int j = 0; j <= 1; j++)          //j = 0表示中心节点只有一个;j = 1表示中心节点有两个; 
@@ -166,23 +165,25 @@ string Solutions::longestPalindrome(std::string s)
 			int l = i;
 			int r = i + j;
 
-			while (l >= 0 && r < length && s[l] == s[r])
+			while (l >= 0 && r < length && s[l] == s[r])          //判断当前子串是否为回文串
 			{
+				//扩展当前回文子串
 				l--;
 				r++;
 			}
 
-			//回溯到回文字符串的起始和结束位置
+			//回溯到回文子串的起始和结束位置
 			l++;
 			r--;
 
-			//比较并保存最长的字符串起始位置和长度。
-			if (maxLength < r - l + 1) {
+			//比较并保存最长的字符串起始位置和长度
+			if (maxLength < r - l + 1) 
+			{
 				maxLength = r - l + 1;
 				maxStart = l;
 			}
 		}
 	}
 
-	return string();
+	return s.substr(maxStart, maxLength);
 }
