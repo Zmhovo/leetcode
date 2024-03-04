@@ -15,6 +15,7 @@ Solutions::~Solutions()
 {
 }
 
+
 /*  1.给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
 	你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。  */
 /*
@@ -152,7 +153,7 @@ double Solutions::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 
 /*  5.给你一个字符串s，找到s中最长的回文子串。
 	如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。*/
-string Solutions::longestPalindrome(std::string s)
+/*string Solutions::longestPalindrome(std::string s)
 {
 	int length = s.length();
 	int maxStart = 0;
@@ -185,5 +186,59 @@ string Solutions::longestPalindrome(std::string s)
 		}
 	}
 
-	return s.substr(maxStart, maxLength);
+	return s.substr(maxStart, maxLength);          //substr(maxStart, maxLength)从maxStart起复制maxLength个字符
 }
+*/
+
+
+/*  6.将一个给定字符串s根据给定的行数numRows ，以从上往下、从左到右进行Z字形排列。
+比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
+P   A   H   N
+A P L S I I G
+Y   I   R
+之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："PAHNAPLSIIGYIR"。
+请你实现这个将字符串进行指定行数变换的函数：string convert(string s, int numRows);
+*/
+/*
+string Solutions::convert(string s, int numRows)
+{
+	std::unordered_map<int, string> map;
+	auto length = s.size();
+	int key = 0, state = 1;          //key表示第几行；state表示状态，"-1"为Z字向下，"1"为Z字向上
+	for (int i = 0; i < length; i++)
+	{			
+		map[key].push_back(s[i]);
+		if (numRows == 1)          //numRows为"1"表示无Z形
+		{
+			state = 0;
+		}
+		else
+		{	
+			if (i % (numRows - 1) == 0)          //到达Z字顶点切换方向
+			{
+				state *= -1;
+			}
+
+			if (state == -1)          //Z字向下，行数递增
+			{
+				key++;
+			}
+			else if (state == 1)          //Z字向上，行数递减
+			{
+				key--;
+			}
+			else
+			{
+			}
+		}
+	}
+
+	string result;
+	//将map转换为string
+	for (key = 0; key < numRows; key++)
+	{
+		result += map[key];
+	}
+	return result;
+}
+*/
