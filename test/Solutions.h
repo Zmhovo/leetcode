@@ -31,7 +31,9 @@ public:
 	//int getKthElement(const std::vector<int>& nums1, const std::vector<int>& nums2, int k);
 	//double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);          //4. 寻找两个正序数组的中位数
 
-	std::string longestPalindrome(std::string s);//5.最长回文子串
+	//std::string longestPalindrome(std::string s);          //5.最长回文子串
+
+	//std::string convert(std::string s, int numRows);		  //6.Z字形变换
 private:
 
 };
