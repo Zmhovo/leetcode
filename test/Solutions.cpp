@@ -1,4 +1,4 @@
-ï»¿#include "Solutions.h"
+#include "Solutions.h"
 
 
 using std::cin;
@@ -17,47 +17,47 @@ Solutions::~Solutions()
 
 
 
-/*  1.ç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„ nums å’Œä¸€ä¸ªæ•´æ•°ç›®æ ‡å€¼ targetï¼Œè¯·ä½ åœ¨è¯¥æ•°ç»„ä¸­æ‰¾å‡ºå’Œä¸ºç›®æ ‡å€¼ target çš„é‚£ä¸¤ä¸ªæ•´æ•°ï¼Œå¹¶è¿”å›å®ƒä»¬çš„æ•°ç»„ä¸‹æ ‡ã€‚
-	ä½ å¯ä»¥å‡è®¾æ¯ç§è¾“å…¥åªä¼šå¯¹åº”ä¸€ä¸ªç­”æ¡ˆã€‚ä½†æ˜¯ï¼Œæ•°ç»„ä¸­åŒä¸€ä¸ªå…ƒç´ åœ¨ç­”æ¡ˆé‡Œä¸èƒ½é‡å¤å‡ºç°ã€‚  */
+/*  1.¸ø¶¨Ò»¸öÕûÊıÊı×é nums ºÍÒ»¸öÕûÊıÄ¿±êÖµ target£¬ÇëÄãÔÚ¸ÃÊı×éÖĞÕÒ³öºÍÎªÄ¿±êÖµ target µÄÄÇÁ½¸öÕûÊı£¬²¢·µ»ØËüÃÇµÄÊı×éÏÂ±ê¡£
+	Äã¿ÉÒÔ¼ÙÉèÃ¿ÖÖÊäÈëÖ»»á¶ÔÓ¦Ò»¸ö´ğ°¸¡£µ«ÊÇ£¬Êı×éÖĞÍ¬Ò»¸öÔªËØÔÚ´ğ°¸Àï²»ÄÜÖØ¸´³öÏÖ¡£  */
 /*
 vector<int> Solutions::TwoSum(vector<int>& nums, int target)
 {
-	std::unordered_map <int, int> map;          //ä½¿ç”¨æ— åºæ˜ å°„
+	std::unordered_map <int, int> map;          //Ê¹ÓÃÎŞĞòÓ³Éä
 	for (int i = 0; i < nums.size(); i++)
 	{
-		auto iter = map.find(target - nums[i]);          //find()è¿”å›é”®ä¸ºtarget - nums[i]çš„è¿­ä»£å™¨ï¼Œè‹¥æ— å¯¹åº”å€¼ï¼Œè¿”å›end()
+		auto iter = map.find(target - nums[i]);          //find()·µ»Ø¼üÎªtarget - nums[i]µÄµü´úÆ÷£¬ÈôÎŞ¶ÔÓ¦Öµ£¬·µ»Øend()
 		if (iter != map.end())
 		{
-			return { i,iter->second };          //->second è¿”å›å€¼çš„éƒ¨åˆ†
+			return { i,iter->second };          //->second ·µ»ØÖµµÄ²¿·Ö
 		}
-		map[nums[i]] = i;          //å°†é”®ä¸ºnums[i]ï¼Œå€¼ä¸ºiçš„é”®å€¼å¯¹æ’å…¥æ— åºæ˜ å°„ä¸­
+		map[nums[i]] = i;          //½«¼üÎªnums[i]£¬ÖµÎªiµÄ¼üÖµ¶Ô²åÈëÎŞĞòÓ³ÉäÖĞ
 	}
 	return {};
 }
 */
 
 
-/*  2.ç»™ä½ ä¸¤ä¸ªéç©ºçš„é“¾è¡¨ï¼Œè¡¨ç¤ºä¸¤ä¸ªéè´Ÿçš„æ•´æ•°ã€‚å®ƒä»¬æ¯ä½æ•°å­—éƒ½æ˜¯æŒ‰ç…§é€†åºçš„æ–¹å¼å­˜å‚¨çš„ï¼Œå¹¶ä¸”æ¯ä¸ªèŠ‚ç‚¹åªèƒ½å­˜å‚¨ä¸€ä½æ•°å­—ã€‚
-	è¯·ä½ å°†ä¸¤ä¸ªæ•°ç›¸åŠ ï¼Œå¹¶ä»¥ç›¸åŒå½¢å¼è¿”å›ä¸€ä¸ªè¡¨ç¤ºå’Œçš„é“¾è¡¨ã€‚
-	ä½ å¯ä»¥å‡è®¾é™¤äº†æ•°å­— 0 ä¹‹å¤–ï¼Œè¿™ä¸¤ä¸ªæ•°éƒ½ä¸ä¼šä»¥ 0 å¼€å¤´ã€‚ */
+/*  2.¸øÄãÁ½¸ö·Ç¿ÕµÄÁ´±í£¬±íÊ¾Á½¸ö·Ç¸ºµÄÕûÊı¡£ËüÃÇÃ¿Î»Êı×Ö¶¼ÊÇ°´ÕÕÄæĞòµÄ·½Ê½´æ´¢µÄ£¬²¢ÇÒÃ¿¸ö½ÚµãÖ»ÄÜ´æ´¢Ò»Î»Êı×Ö¡£
+	ÇëÄã½«Á½¸öÊıÏà¼Ó£¬²¢ÒÔÏàÍ¬ĞÎÊ½·µ»ØÒ»¸ö±íÊ¾ºÍµÄÁ´±í¡£
+	Äã¿ÉÒÔ¼ÙÉè³ıÁËÊı×Ö 0 Ö®Íâ£¬ÕâÁ½¸öÊı¶¼²»»áÒÔ 0 ¿ªÍ·¡£ */
 /*
 ListNode* Solutions::addTwoNumbers(ListNode* l1, ListNode* l2)
 {
 	ListNode* head = nullptr, * tail = nullptr;
-	int carry = 0;          //è¿›ä½å€¼carry
-	while (l1 || l2)          //å¾ªç¯éå†l1å’Œl2
+	int carry = 0;          //½øÎ»Öµcarry
+	while (l1 || l2)          //Ñ­»·±éÀúl1ºÍl2
 	{
-		int i1 = l1 ? l1->val : 0;          //å¦‚æœl1ä¸ä¸ºç©ºï¼Œi1 = l1->valï¼›å¦åˆ™i1 = 0
+		int i1 = l1 ? l1->val : 0;          //Èç¹ûl1²»Îª¿Õ£¬i1 = l1->val£»·ñÔòi1 = 0
 		int i2 = l2 ? l2->val : 0;
-		int sum = i1 + i2 + carry;          //å¯¹åº”ä½æ±‚å’Œ
+		int sum = i1 + i2 + carry;          //¶ÔÓ¦Î»ÇóºÍ
 		if (!head)
 		{
-			head = tail = new ListNode(sum % 10);          //å½“å‰èŠ‚ç‚¹æ˜¯ç»“æœåˆ—è¡¨å¤´èŠ‚ç‚¹ï¼Œå¤´èŠ‚ç‚¹å’Œå°¾èŠ‚ç‚¹éƒ½æŒ‡å‘æ–°åˆ›å»ºçš„èŠ‚ç‚¹
+			head = tail = new ListNode(sum % 10);          //µ±Ç°½ÚµãÊÇ½á¹ûÁĞ±íÍ·½Úµã£¬Í·½ÚµãºÍÎ²½Úµã¶¼Ö¸ÏòĞÂ´´½¨µÄ½Úµã
 		}
 		else
 		{
-			tail->next = new ListNode(sum % 10);          //å½“å‰èŠ‚ç‚¹ä¸æ˜¯ç»“æœåˆ—è¡¨å¤´èŠ‚ç‚¹ï¼Œå°¾èŠ‚ç‚¹æŒ‡å‘æ–°åˆ›å»ºçš„èŠ‚ç‚¹
-			tail = tail->next;          //æ›´æ–°å°¾èŠ‚ç‚¹
+			tail->next = new ListNode(sum % 10);          //µ±Ç°½Úµã²»ÊÇ½á¹ûÁĞ±íÍ·½Úµã£¬Î²½ÚµãÖ¸ÏòĞÂ´´½¨µÄ½Úµã
+			tail = tail->next;          //¸üĞÂÎ²½Úµã
 		}
 		carry = sum / 10;
 		if (l1)
@@ -71,26 +71,26 @@ ListNode* Solutions::addTwoNumbers(ListNode* l1, ListNode* l2)
 	}
 	if (carry > 0)
 	{
-		tail->next = new ListNode(carry);          //å¤„ç†æœ€åä¸€ä¸ªè¿›ä½å€¼
+		tail->next = new ListNode(carry);          //´¦Àí×îºóÒ»¸ö½øÎ»Öµ
 	}
 	return head;
 }
 */
 
-/*  3.ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²sï¼Œè¯·ä½ æ‰¾å‡ºå…¶ä¸­ä¸å«æœ‰é‡å¤å­—ç¬¦çš„æœ€é•¿å­ä¸²çš„é•¿åº¦ã€‚*/
+/*  3.¸ø¶¨Ò»¸ö×Ö·û´®s£¬ÇëÄãÕÒ³öÆäÖĞ²»º¬ÓĞÖØ¸´×Ö·ûµÄ×î³¤×Ó´®µÄ³¤¶È¡£*/
 /*
 int Solutions::lengthOfLongestSubstring(string s)
 {
 	std::unordered_map<char, int> map;
 	auto length = s.size();
-	int res = 0, border = -1;          //resä¸ºæ‰€æ±‚é•¿åº¦ï¼Œborderä¸ºä¸å«é‡å¤å­—ç¬¦å­ä¸²å·¦è¾¹ç•Œ
+	int res = 0, border = -1;          //resÎªËùÇó³¤¶È£¬borderÎª²»º¬ÖØ¸´×Ö·û×Ó´®×ó±ß½ç
 	for (int i = 0; i < length; i++)
 	{
 		if (map.find(s[i]) != map.end())
 		{
-			border = std::max(border, map.find(s[i])->second);          //æ›´æ–°å·¦è¾¹ç•Œ
+			border = std::max(border, map.find(s[i])->second);          //¸üĞÂ×ó±ß½ç
 		}
-		map[s[i]] = i;          //æ’å…¥æˆ–æ›´æ–°å“ˆå¸Œè¡¨
+		map[s[i]] = i;          //²åÈë»ò¸üĞÂ¹şÏ£±í
 		res = std::max(res, i - border);
 	}
 	return res;
@@ -99,24 +99,24 @@ int Solutions::lengthOfLongestSubstring(string s)
 
 
 
-/*  4.ç»™å®šä¸¤ä¸ªå¤§å°åˆ†åˆ«ä¸ºmå’Œnçš„æ­£åºï¼ˆä»å°åˆ°å¤§ï¼‰æ•°ç»„nums1å’Œnums2ã€‚è¯·ä½ æ‰¾å‡ºå¹¶è¿”å›è¿™ä¸¤ä¸ªæ­£åºæ•°ç»„çš„ä¸­ä½æ•°ã€‚
-	ç®—æ³•çš„æ—¶é—´å¤æ‚åº¦åº”è¯¥ä¸ºO(log(m+n))ã€‚*/
+/*  4.¸ø¶¨Á½¸ö´óĞ¡·Ö±ğÎªmºÍnµÄÕıĞò£¨´ÓĞ¡µ½´ó£©Êı×énums1ºÍnums2¡£ÇëÄãÕÒ³ö²¢·µ»ØÕâÁ½¸öÕıĞòÊı×éµÄÖĞÎ»Êı¡£
+	Ëã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÓ¦¸ÃÎªO(log(m+n))¡£*/
 /*
 int Solutions::getKthElement(const vector<int>& nums1, const vector<int>& nums2, int k)
 {
 	int m = nums1.size(), n = nums2.size();
-	int index1 = 0, index2 = 0;          //è¾¹ç•Œä¸‹æ ‡
+	int index1 = 0, index2 = 0;          //±ß½çÏÂ±ê
 	while (true)
 	{
-		if (index1 == m)          //num1æ•°ç»„ä¸ºç©ºï¼Œnum2[index2 + k - 1]ä¸ºä¸­ä½æ•°
+		if (index1 == m)          //num1Êı×éÎª¿Õ£¬num2[index2 + k - 1]ÎªÖĞÎ»Êı
 		{
 			return nums2[index2 + k - 1];
 		}
-		if (index2 == n)          //num2æ•°ç»„ä¸ºç©ºï¼Œnum1[index1 + k - 1]ä¸ºä¸­ä½æ•°
+		if (index2 == n)          //num2Êı×éÎª¿Õ£¬num1[index1 + k - 1]ÎªÖĞÎ»Êı
 		{
 			return nums1[index1 + k - 1];
 		}
-		if (k == 1)          //å¦‚æœk == 1ï¼Œåªè¦è¿”å›ä¸¤ä¸ªæ•°ç»„é¦–å…ƒç´ çš„æœ€å°å€¼å³å¯ã€‚
+		if (k == 1)          //Èç¹ûk == 1£¬Ö»Òª·µ»ØÁ½¸öÊı×éÊ×ÔªËØµÄ×îĞ¡Öµ¼´¿É¡£
 		{
 			return std::min(nums1[index1], nums2[index2]);
 		}
@@ -124,7 +124,7 @@ int Solutions::getKthElement(const vector<int>& nums1, const vector<int>& nums2,
 		int newIndex1 = std::min(index1 + k / 2 - 1, m - 1), newIndex2 = std::min(index2 + k / 2 - 1, n - 1);
 		if (nums1[newIndex1] <= nums2[newIndex2]) 
 		{
-			k -= newIndex1 - index1 + 1;          //newIndex1 - index1 + 1å³éœ€è¦æ’é™¤çš„ä¸ªæ•°
+			k -= newIndex1 - index1 + 1;          //newIndex1 - index1 + 1¼´ĞèÒªÅÅ³ıµÄ¸öÊı
 			index1 = newIndex1 + 1;
 		}
 		else 
@@ -140,7 +140,7 @@ int Solutions::getKthElement(const vector<int>& nums1, const vector<int>& nums2,
 double Solutions::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 {
 	int totalLength = nums1.size() + nums2.size();
-	if (totalLength % 2 == 1)          //åˆ¤æ–­æ€»é•¿åº¦æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°
+	if (totalLength % 2 == 1)          //ÅĞ¶Ï×Ü³¤¶ÈÊÇÆæÊı»¹ÊÇÅ¼Êı
 	{
 		return getKthElement(nums1, nums2, (totalLength + 1) / 2);
 	}
@@ -152,8 +152,8 @@ double Solutions::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 }
 */
 
-/*  5.ç»™ä½ ä¸€ä¸ªå­—ç¬¦ä¸²sï¼Œæ‰¾åˆ°sä¸­æœ€é•¿çš„å›æ–‡å­ä¸²ã€‚
-	å¦‚æœå­—ç¬¦ä¸²çš„ååºä¸åŸå§‹å­—ç¬¦ä¸²ç›¸åŒï¼Œåˆ™è¯¥å­—ç¬¦ä¸²ç§°ä¸ºå›æ–‡å­—ç¬¦ä¸²ã€‚*/
+/*  5.¸øÄãÒ»¸ö×Ö·û´®s£¬ÕÒµ½sÖĞ×î³¤µÄ»ØÎÄ×Ó´®¡£
+	Èç¹û×Ö·û´®µÄ·´ĞòÓëÔ­Ê¼×Ö·û´®ÏàÍ¬£¬Ôò¸Ã×Ö·û´®³ÆÎª»ØÎÄ×Ö·û´®¡£*/
 /*
 string Solutions::longestPalindrome(std::string s)
 {
@@ -161,26 +161,26 @@ string Solutions::longestPalindrome(std::string s)
 	int maxStart = 0;
 	int maxLength = 0;
 	//cbbd
-	for (int i = 0; i < length; i++)          //éå†æ¯ä¸ªå­—ç¬¦ä½œä¸ºä¸­å¿ƒå­—ç¬¦
+	for (int i = 0; i < length; i++)          //±éÀúÃ¿¸ö×Ö·û×÷ÎªÖĞĞÄ×Ö·û
 	{
-		for (int j = 0; j <= 1; j++)          //j = 0è¡¨ç¤ºä¸­å¿ƒèŠ‚ç‚¹åªæœ‰ä¸€ä¸ª;j = 1è¡¨ç¤ºä¸­å¿ƒèŠ‚ç‚¹æœ‰ä¸¤ä¸ª; 
+		for (int j = 0; j <= 1; j++)          //j = 0±íÊ¾ÖĞĞÄ½ÚµãÖ»ÓĞÒ»¸ö;j = 1±íÊ¾ÖĞĞÄ½ÚµãÓĞÁ½¸ö; 
 		{
 			int l = i;
 			int r = i + j;
 
-			while (l >= 0 && r < length && s[l] == s[r])          //åˆ¤æ–­å½“å‰å­ä¸²æ˜¯å¦ä¸ºå›æ–‡ä¸²
+			while (l >= 0 && r < length && s[l] == s[r])          //ÅĞ¶Ïµ±Ç°×Ó´®ÊÇ·ñÎª»ØÎÄ´®
 			{
-				//æ‰©å±•å½“å‰å›æ–‡å­ä¸²
+				//À©Õ¹µ±Ç°»ØÎÄ×Ó´®
 				l--;
 				r++;
 			}
 
-			//å›æº¯åˆ°å›æ–‡å­ä¸²çš„èµ·å§‹å’Œç»“æŸä½ç½®
+			//»ØËİµ½»ØÎÄ×Ó´®µÄÆğÊ¼ºÍ½áÊøÎ»ÖÃ
 			l++;
 			r--;
 
-			//æ¯”è¾ƒå¹¶ä¿å­˜æœ€é•¿çš„å­—ç¬¦ä¸²èµ·å§‹ä½ç½®å’Œé•¿åº¦
-			if (maxLength < r - l + 1) 
+			//±È½Ï²¢±£´æ×î³¤µÄ×Ö·û´®ÆğÊ¼Î»ÖÃºÍ³¤¶È
+			if (maxLength < r - l + 1)
 			{
 				maxLength = r - l + 1;
 				maxStart = l;
@@ -188,43 +188,43 @@ string Solutions::longestPalindrome(std::string s)
 		}
 	}
 
-	return s.substr(maxStart, maxLength);          //substr(maxStart, maxLength)ä»maxStartèµ·å¤åˆ¶maxLengthä¸ªå­—ç¬¦
+	return s.substr(maxStart, maxLength);          //substr(maxStart, maxLength)´ÓmaxStartÆğ¸´ÖÆmaxLength¸ö×Ö·û
 }
 */
 
 
-/*  6.å°†ä¸€ä¸ªç»™å®šå­—ç¬¦ä¸²sæ ¹æ®ç»™å®šçš„è¡Œæ•°numRows ï¼Œä»¥ä»ä¸Šå¾€ä¸‹ã€ä»å·¦åˆ°å³è¿›è¡ŒZå­—å½¢æ’åˆ—ã€‚
-	æ¯”å¦‚è¾“å…¥å­—ç¬¦ä¸²ä¸º "PAYPALISHIRING" è¡Œæ•°ä¸º 3 æ—¶ï¼Œæ’åˆ—å¦‚ä¸‹ï¼š
+/*  6.½«Ò»¸ö¸ø¶¨×Ö·û´®s¸ù¾İ¸ø¶¨µÄĞĞÊınumRows £¬ÒÔ´ÓÉÏÍùÏÂ¡¢´Ó×óµ½ÓÒ½øĞĞZ×ÖĞÎÅÅÁĞ¡£
+	±ÈÈçÊäÈë×Ö·û´®Îª "PAYPALISHIRING" ĞĞÊıÎª 3 Ê±£¬ÅÅÁĞÈçÏÂ£º
 	P   A   H   N
 	A P L S I I G
 	Y   I   R
-	ä¹‹åï¼Œä½ çš„è¾“å‡ºéœ€è¦ä»å·¦å¾€å³é€è¡Œè¯»å–ï¼Œäº§ç”Ÿå‡ºä¸€ä¸ªæ–°çš„å­—ç¬¦ä¸²ï¼Œæ¯”å¦‚ï¼š"PAHNAPLSIIGYIR"ã€‚
-	è¯·ä½ å®ç°è¿™ä¸ªå°†å­—ç¬¦ä¸²è¿›è¡ŒæŒ‡å®šè¡Œæ•°å˜æ¢çš„å‡½æ•°ï¼šstring convert(string s, int numRows);*/
+	Ö®ºó£¬ÄãµÄÊä³öĞèÒª´Ó×óÍùÓÒÖğĞĞ¶ÁÈ¡£¬²úÉú³öÒ»¸öĞÂµÄ×Ö·û´®£¬±ÈÈç£º"PAHNAPLSIIGYIR"¡£
+	ÇëÄãÊµÏÖÕâ¸ö½«×Ö·û´®½øĞĞÖ¸¶¨ĞĞÊı±ä»»µÄº¯Êı£ºstring convert(string s, int numRows);*/
 /*
 string Solutions::convert(string s, int numRows)
 {
 	std::unordered_map<int, string> map;
 	auto length = s.size();
-	int key = 0, state = 1;          //keyè¡¨ç¤ºç¬¬å‡ è¡Œï¼›stateè¡¨ç¤ºçŠ¶æ€ï¼Œ"-1"ä¸ºZå­—å‘ä¸‹ï¼Œ"1"ä¸ºZå­—å‘ä¸Š
+	int key = 0, state = 1;          //key±íÊ¾µÚ¼¸ĞĞ£»state±íÊ¾×´Ì¬£¬"-1"ÎªZ×ÖÏòÏÂ£¬"1"ÎªZ×ÖÏòÉÏ
 	for (int i = 0; i < length; i++)
 	{			
 		map[key].push_back(s[i]);
-		if (numRows == 1)          //numRowsä¸º"1"è¡¨ç¤ºæ— Zå½¢
+		if (numRows == 1)          //numRowsÎª"1"±íÊ¾ÎŞZĞÎ
 		{
 			state = 0;
 		}
 		else
 		{	
-			if (i % (numRows - 1) == 0)          //åˆ°è¾¾Zå­—é¡¶ç‚¹åˆ‡æ¢æ–¹å‘
+			if (i % (numRows - 1) == 0)          //µ½´ïZ×Ö¶¥µãÇĞ»»·½Ïò
 			{
 				state *= -1;
 			}
 
-			if (state == -1)          //Zå­—å‘ä¸‹ï¼Œè¡Œæ•°é€’å¢
+			if (state == -1)          //Z×ÖÏòÏÂ£¬ĞĞÊıµİÔö
 			{
 				key++;
 			}
-			else if (state == 1)          //Zå­—å‘ä¸Šï¼Œè¡Œæ•°é€’å‡
+			else if (state == 1)          //Z×ÖÏòÉÏ£¬ĞĞÊıµİ¼õ
 			{
 				key--;
 			}
@@ -235,7 +235,7 @@ string Solutions::convert(string s, int numRows)
 	}
 
 	string result;
-	//å°†mapè½¬æ¢ä¸ºstring
+	//½«map×ª»»Îªstring
 	for (key = 0; key < numRows; key++)
 	{
 		result += map[key];
@@ -245,17 +245,17 @@ string Solutions::convert(string s, int numRows)
 */
  
 
-/* 7.ç»™ä½ ä¸€ä¸ª32ä½çš„æœ‰ç¬¦å·æ•´æ•°xï¼Œè¿”å›å°†xä¸­çš„æ•°å­—éƒ¨åˆ†åè½¬åçš„ç»“æœã€‚
-	å¦‚æœåè½¬åæ•´æ•°è¶…è¿‡32ä½çš„æœ‰ç¬¦å·æ•´æ•°çš„èŒƒå›´ [âˆ’2^31,  2^31 âˆ’ 1] ï¼Œå°±è¿”å› 0ã€‚
-	å‡è®¾ç¯å¢ƒä¸å…è®¸å­˜å‚¨64ä½æ•´æ•°ï¼ˆæœ‰ç¬¦å·æˆ–æ— ç¬¦å·ï¼‰ã€‚*/
+/* 7.¸øÄãÒ»¸ö32Î»µÄÓĞ·ûºÅÕûÊıx£¬·µ»Ø½«xÖĞµÄÊı×Ö²¿·Ö·´×ªºóµÄ½á¹û¡£
+	Èç¹û·´×ªºóÕûÊı³¬¹ı32Î»µÄÓĞ·ûºÅÕûÊıµÄ·¶Î§[-2^31£¬2^31 - 1]·µ»Ø0¡£
+	¼ÙÉè»·¾³²»ÔÊĞí´æ´¢64Î»ÕûÊı£¨ÓĞ·ûºÅ»òÎŞ·ûºÅ£©¡£*/
 /*
 int Solutions::reverse(int x)
 {
 	int sum = 0;
 	while (x != 0)
 	{
-	    //è¾“å…¥çš„æ˜¯32ä½çš„æœ‰ç¬¦å·æ•´æ•°xï¼Œå³è¾“å…¥çš„-2147483648 <= x <= 2147483647ï¼Œæ‰€ä»¥ç¿»è½¬åçš„æœ€åä¸€ä½æ˜¯1æˆ–2ï¼Œå¹¶ä¸ä¼šå¯¼è‡´æº¢å‡ºã€‚
-		//åªéœ€åˆ¤æ–­ä¹ä½æ•°æ—¶sum > 214748364 || sum < -214748364
+	    //ÊäÈëµÄÊÇ32Î»µÄÓĞ·ûºÅÕûÊıx£¬¼´ÊäÈëµÄ-2147483648 <= x <= 2147483647£¬ËùÒÔ·­×ªºóµÄ×îºóÒ»Î»ÊÇ1»ò2£¬²¢²»»áµ¼ÖÂÒç³ö¡£
+		//Ö»ĞèÅĞ¶Ï¾ÅÎ»ÊıÊ±sum > 214748364 || sum < -214748364
 		if (sum > 214748364 || sum < -214748364)
 		{
 			return 0;
@@ -266,4 +266,5 @@ int Solutions::reverse(int x)
 	}
 	return sum;
 }
+
 */
