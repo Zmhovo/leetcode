@@ -16,6 +16,7 @@ Solutions::~Solutions()
 }
 
 
+
 /*  1.给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
 	你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。  */
 /*
@@ -153,7 +154,8 @@ double Solutions::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 
 /*  5.给你一个字符串s，找到s中最长的回文子串。
 	如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。*/
-/*string Solutions::longestPalindrome(std::string s)
+/*
+string Solutions::longestPalindrome(std::string s)
 {
 	int length = s.length();
 	int maxStart = 0;
@@ -178,7 +180,7 @@ double Solutions::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 			r--;
 
 			//比较并保存最长的字符串起始位置和长度
-			if (maxLength < r - l + 1) 
+			if (maxLength < r - l + 1)
 			{
 				maxLength = r - l + 1;
 				maxStart = l;
@@ -192,13 +194,12 @@ double Solutions::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 
 
 /*  6.将一个给定字符串s根据给定的行数numRows ，以从上往下、从左到右进行Z字形排列。
-比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
-P   A   H   N
-A P L S I I G
-Y   I   R
-之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："PAHNAPLSIIGYIR"。
-请你实现这个将字符串进行指定行数变换的函数：string convert(string s, int numRows);
-*/
+	比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
+	P   A   H   N
+	A P L S I I G
+	Y   I   R
+	之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："PAHNAPLSIIGYIR"。
+	请你实现这个将字符串进行指定行数变换的函数：string convert(string s, int numRows);*/
 /*
 string Solutions::convert(string s, int numRows)
 {
@@ -241,4 +242,29 @@ string Solutions::convert(string s, int numRows)
 	}
 	return result;
 }
+*/
+ 
+
+/* 7.给你一个32位的有符号整数x，返回将x中的数字部分反转后的结果。
+	如果反转后整数超过32位的有符号整数的范围[-2^31，2^31 - 1]返回0。
+	假设环境不允许存储64位整数（有符号或无符号）。*/
+/*
+int Solutions::reverse(int x)
+{
+	int sum = 0;
+	while (x != 0)
+	{
+	    //输入的是32位的有符号整数x，即输入的-2147483648 <= x <= 2147483647，所以翻转后的最后一位是1或2，并不会导致溢出。
+		//只需判断九位数时sum > 214748364 || sum < -214748364
+		if (sum > 214748364 || sum < -214748364)
+		{
+			return 0;
+		}
+		int temp = x % 10;
+		sum = sum * 10 + temp;
+		x /= 10;
+	}
+	return sum;
+}
+
 */

@@ -34,6 +34,8 @@ public:
 	//std::string longestPalindrome(std::string s);          //5.最长回文子串
 
 	//std::string convert(std::string s, int numRows);		  //6.Z字形变换
+
+	//int reverse(int x);		  //7.整数反转
 private:
 
 };
