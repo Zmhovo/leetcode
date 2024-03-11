@@ -160,7 +160,7 @@ string Solutions::longestPalindrome(std::string s)
 	int length = s.length();
 	int maxStart = 0;
 	int maxLength = 0;
-	//cbbd
+
 	for (int i = 0; i < length; i++)          //遍历每个字符作为中心字符
 	{
 		for (int j = 0; j <= 1; j++)          //j = 0表示中心节点只有一个;j = 1表示中心节点有两个; 
@@ -279,8 +279,7 @@ int Solutions::reverse(int x)
 		如果整数数超过32位有符号整数范围[-2^31，2^31 - 1]，需要截断这个整数，使其保持在这个范围内。
 		具体来说，小于-2^31的整数应该被固定为-2^31，大于2^31 - 1的整数应该被固定为2^31 - 1。返回整数作为最终结果。
 		注意：本题中的空白字符只包括空格字符' '。
-			  除前导空格或数字后的其余字符串外，请勿忽略任何其他字符。
-*/
+			  除前导空格或数字后的其余字符串外，请勿忽略任何其他字符。*/
 /*
 class Automaton
 {
@@ -329,4 +328,49 @@ int Solutions::myAtoi(string s)
 	return automaton.sign * automaton.ans;
 }
 
+*/
+
+
+/* 9.给你一个整数x，如果x是一个回文整数，返回true；否则，返回false。*/
+/*
+bool Solutions::isPalindrome(int x)
+{
+	if (x >= 0)
+	{
+		int temp = 0, pre = x;
+		long sum = 0;
+
+		while (pre != 0)
+		{
+			temp = pre % 10;
+			pre /= 10;
+
+			sum = sum * 10 + temp;
+		}
+
+		if (sum == x)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+//将数字转化为字符串解法
+bool Solutions::isPalindrome(int x)
+{
+	if (x < 0)
+		return false;
+	if (x < 10)
+		return true;
+
+	string num = std::to_string(x);
+	for (int l = 0, r = num.size() - 1; l < r; l++, r--)
+	{
+		if (num[l] != num[r])
+			return false;
+	}
+
+	return true;
+}
 */
