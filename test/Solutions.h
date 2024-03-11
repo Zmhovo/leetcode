@@ -37,7 +37,7 @@ public:
 
 	//int reverse(int x);		  //7.整数反转
 
-	int myAtoi(std::string s);		  //8. 字符串转换整数(atoi)
+	//int myAtoi(std::string s);		  //8. 字符串转换整数(atoi)
 private:
 
 };
