@@ -36,6 +36,10 @@ public:
 	//std::string convert(std::string s, int numRows);		  //6.Z字形变换
 
 	//int reverse(int x);		  //7.整数反转
+
+	//int myAtoi(std::string s);		  //8. 字符串转换整数(atoi)
+
+	//bool isPalindrome(int x);		  //9.回文数
 private:
 
 };
